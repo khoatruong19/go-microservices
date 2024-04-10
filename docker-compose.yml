@@ -60,6 +60,16 @@ services:
     deploy:
       mode: replicated
       replicas: 1
+
+  front-end:
+    build:
+      context: ./front-end
+      dockerfile: ./front-end.dockerfile
+    ports:
+      - "8081:8081"
+    deploy:
+      mode: replicated
+      replicas: 1
       
   postgres:
     image: 'postgres:14.2'
