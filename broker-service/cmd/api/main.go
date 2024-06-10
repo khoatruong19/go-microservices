@@ -26,7 +26,7 @@ func main() {
 	defer rabbitConn.Close()
 
 	app := Config{
-		Rabbit: rabbitConn,
+		Rabbit: nil,
 	}
 
 	log.Printf("Starting broker service on port %s\n", webPort)

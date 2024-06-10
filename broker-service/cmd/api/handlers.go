@@ -7,6 +7,7 @@ import (
 	"context"
 	"encoding/json"
 	"errors"
+	"fmt"
 	"net/http"
 	"net/rpc"
 	"time"
@@ -55,6 +56,9 @@ func (app *Config) HandleSubmission(w http.ResponseWriter, r *http.Request) {
 		app.errorJSON(w, err)
 		return
 	}
+	fmt.Println("hello")
+
+	fmt.Print(requestPayload)
 
 	switch requestPayload.Action {
 	case "auth":
